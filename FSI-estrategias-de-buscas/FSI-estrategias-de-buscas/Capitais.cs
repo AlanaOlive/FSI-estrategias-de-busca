@@ -432,6 +432,35 @@ namespace FSI_estrategias_de_buscas
 
             DistanciasAereas = new Dictionary<string, Dictionary<string, int>>
             {
+                ["Aracaju"] = new Dictionary<string,int>
+                {
+                    ["Belém"] = 1641,
+                    ["Belo Horizonte"] = 1248,
+                    ["Boa Vista"] = 3022,
+                    ["Brasília"] = 1292,
+                    ["Campo Grande"] = 2155,
+                    ["Cuiabá"] = 2121,
+                    ["Curitiba"] = 2061,
+                    ["Florianópolis"] = 2207,
+                    ["Fortaleza"] = 815,
+                    ["Goiania"] = 1461,
+                    ["João Pessoa"] = 486,
+                    ["Macapá"] = 1967,
+                    ["Maceió"] = 201,
+                    ["Manaus"] = 2673,
+                    ["Natal"] = 604,
+                    ["Palmas"] = 1235,
+                    ["Porto Alegre"] = 2580,
+                    ["Porto Velho"] = 2946,
+                    ["Recife"] = 398,
+                    ["Rio Branco"] = 3359,
+                    ["Rio de Janeiro"] = 1482,
+                    ["Salvador"] = 277,
+                    ["São Luis"] = 1226,
+                    ["São Paulo"] = 1731,
+                    ["Teresina"] = 903,
+                    ["Vitória"] = 1102
+                },
                 ["Curitiba"] = new Dictionary<string, int>
                 {
                     ["Goiania"] = 972
