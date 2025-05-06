@@ -697,7 +697,189 @@ namespace FSI_estrategias_de_buscas
                     ["Teresina"] = 1467,
                     ["Vitória"] = 1022
                 },
-                
+                ["João Pessoa"] = new Dictionary<string, int>
+                {
+                    ["Macapá"] = 1964,
+                    ["Maceió"] = 299,
+                    ["Manaus"] = 2819,
+                    ["Natal"] = 151,
+                    ["Palmas"] = 1521,
+                    ["Porto Alegre"] = 3066,
+                    ["Porto Velho"] = 3200,
+                    ["Recife"] = 104,
+                    ["Rio Branco"] = 3632,
+                    ["Rio de Janeiro"] = 1968,
+                    ["Salvador"] = 763,
+                    ["São Luis"] = 1162,
+                    ["São Paulo"] = 2216,
+                    ["Teresina"] = 905,
+                    ["Vitória"] = 1581,
+                    ["São Paulo"] = 2216,
+                    ["Teresina"] = 905,
+                    ["Vitória"] = 1581
+                },
+                ["Macapá"] = new Dictionary<string, int>
+                {
+                    ["Maceió"] = 2009,
+                    ["Manaus"] = 1054,
+                    ["Natal"] = 1874,
+                    ["Palmas"] = 1177,
+                    ["Porto Alegre"] = 3341,
+                    ["Porto Velho"] = 1724,
+                    ["Recife"] = 2005,
+                    ["Rio Branco"] = 2159,
+                    ["Rio de Janeiro"] = 2687,
+                    ["Salvador"] = 2000,
+                    ["São Luis"] = 803,
+                    ["São Paulo"] = 2664,
+                    ["Teresina"] = 1079,
+                    ["Vitória"] = 2545
+                },
+                ["Maceió"] = new Dictionary<string, int>
+                {
+                    ["Maceió"] = 0,
+                    ["Manaus"] = 2778,
+                    ["Natal"] = 434,
+                    ["Palmas"] = 1383,
+                    ["Porto Alegre"] = 2775,
+                    ["Porto Velho"] = 3090,
+                    ["Recife"] = 202,
+                    ["Rio Branco"] = 3510,
+                    ["Rio de Janeiro"] = 1671,
+                    ["Salvador"] = 475,
+                    ["São Luis"] = 1234,
+                    ["São Paulo"] = 1928,
+                    ["Teresina"] = 929,
+                    ["Vitória"] = 1282
+                },
+                ["Manaus"] = new Dictionary<string, int>
+                {
+                    ["Manaus"] = 0,
+                    ["Natal"] = 2765,
+                    ["Palmas"] = 1509,
+                    ["Porto Alegre"] = 3132,
+                    ["Porto Velho"] = 761,
+                    ["Recife"] = 2833,
+                    ["Rio Branco"] = 1149,
+                    ["Rio de Janeiro"] = 2849,
+                    ["Salvador"] = 2605,
+                    ["São Luis"] = 1746,
+                    ["São Paulo"] = 2689,
+                    ["Teresina"] = 1921,
+                    ["Vitória"] = 2865
+                },
+                ["Natal"] = new Dictionary<string, int>
+                {
+                    ["Natal"] = 0,
+                    ["Palmas"] = 1527,
+                    ["Porto Alegre"] = 3172,
+                    ["Porto Velho"] = 3179,
+                    ["Recife"] = 253,
+                    ["Rio Branco"] = 3616,
+                    ["Rio de Janeiro"] = 2085,
+                    ["Salvador"] = 875,
+                    ["São Luis"] = 1071,
+                    ["São Paulo"] = 2320,
+                    ["Teresina"] = 843,
+                    ["Vitória"] = 1706
+                },
+                ["Palmas"] = new Dictionary<string, int>
+                {
+                    ["Palmas"] = 0,
+                    ["Porto Alegre"] = 2222,
+                    ["Porto Velho"] = 1711,
+                    ["Recife"] = 1498,
+                    ["Rio Branco"] = 2127,
+                    ["Rio de Janeiro"] = 1512,
+                    ["Salvador"] = 1114,
+                    ["São Luis"] = 964,
+                    ["São Paulo"] = 1493,
+                    ["Teresina"] = 835,
+                    ["Vitória"] = 1413
+                },
+                ["Porto Alegre"] = new Dictionary<string, int>
+                {
+                    ["Porto Alegre"] = 0,
+                    ["Porto Velho"] = 2706,
+                    ["Recife"] = 2977,
+                    ["Rio Branco"] = 2814,
+                    ["Rio de Janeiro"] = 1123,
+                    ["Salvador"] = 2303,
+                    ["São Luis"] = 3142,
+                    ["São Paulo"] = 852,
+                    ["Teresina"] = 2909,
+                    ["Vitória"] = 1536
+                },
+                ["Porto Velho"] = new Dictionary<string, int>
+                {
+                    ["Porto Velho"] = 0,
+                    ["Recife"] = 3190,
+                    ["Rio Branco"] = 449,
+                    ["Rio de Janeiro"] = 2707,
+                    ["Salvador"] = 2808,
+                    ["São Luis"] = 2274,
+                    ["São Paulo"] = 2463,
+                    ["Teresina"] = 2362,
+                    ["Vitória"] = 2835
+                },
+                ["Recife"] = new Dictionary<string, int>
+                {
+                    ["Recife"] = 0,
+                    ["Rio Branco"] = 3618,
+                    ["Rio de Janeiro"] = 1874,
+                    ["Salvador"] = 675,
+                    ["São Luis"] = 1209,
+                    ["São Paulo"] = 2128,
+                    ["Teresina"] = 934,
+                    ["Vitória"] = 1483
+                },
+                ["Rio Branco"] = new Dictionary<string, int>
+                {
+                    ["Rio Branco"] = 0,
+                    ["Rio de Janeiro"] = 2982,
+                    ["Salvador"] = 3206,
+                    ["São Luis"] = 2726,
+                    ["São Paulo"] = 2704,
+                    ["Teresina"] = 2806,
+                    ["Vitória"] = 3156
+                },
+                ["Rio de Janeiro"] = new Dictionary<string, int>
+                {
+                    ["Rio de Janeiro"] = 0,
+                    ["Salvador"] = 1209,
+                    ["São Luis"] = 2266,
+                    ["São Paulo"] = 357,
+                    ["Teresina"] = 1979,
+                    ["Vitória"] = 412
+
+                },
+                ["Salvador"] = new Dictionary<string, int>
+                {
+                    ["Salvador"] = 0,
+                    ["São Luis"] = 1323,
+                    ["São Paulo"] = 1453,
+                    ["Teresina"] = 994,
+                    ["Vitória"] = 839
+
+                },
+                ["São Luis"] = new Dictionary<string, int>
+                {
+                    ["São Luis"] = 0,
+                    ["São Paulo"] = 2348,
+                    ["Teresina"] = 329,
+                    ["Vitória"] = 2023
+                },
+                ["São Paulo"] = new Dictionary<string, int>
+                {
+                    ["São Paulo"] = 0,
+                    ["Teresina"] = 2091,
+                    ["Vitória"] = 741
+                },
+                ["Teresinha"] = new Dictionary<string, int>
+                {
+                    ["Teresina"] = 0,
+                    ["Vitória"] = 1713
+                },                
             };
         }
     }
