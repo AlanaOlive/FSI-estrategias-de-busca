@@ -1,0 +1,17 @@
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\bin\Debug\net6.0-windows\FSI-estrategias-de-buscas.exe
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\bin\Debug\net6.0-windows\FSI-estrategias-de-buscas.deps.json
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\bin\Debug\net6.0-windows\FSI-estrategias-de-buscas.runtimeconfig.json
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\bin\Debug\net6.0-windows\FSI-estrategias-de-buscas.dll
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\bin\Debug\net6.0-windows\FSI-estrategias-de-buscas.pdb
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI_estrategias_de_buscas.Form1.resources
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.csproj.GenerateResource.cache
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.GeneratedMSBuildEditorConfig.editorconfig
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.AssemblyInfoInputs.cache
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.AssemblyInfo.cs
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.csproj.CoreCompileInputs.cache
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.sourcelink.json
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.dll
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\refint\FSI-estrategias-de-buscas.dll
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.pdb
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\FSI-estrategias-de-buscas.genruntimeconfig.cache
+C:\All\Estudos\Pessoal\FSI-estrategias-de-busca\FSI-estrategias-de-buscas\FSI-estrategias-de-buscas\obj\Debug\net6.0-windows\ref\FSI-estrategias-de-buscas.dll
