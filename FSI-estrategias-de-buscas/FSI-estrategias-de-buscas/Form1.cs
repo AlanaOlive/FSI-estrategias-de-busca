@@ -141,17 +141,20 @@ namespace FSI_estrategias_de_buscas
             }
         }
 
-        private Dictionary<string, List<string>> ConvertToSimpleGraph(Dictionary<string, Dictionary<string, int>> grafoComPesos)
+        public Dictionary<string, Dictionary<string, int>> ConvertToSimpleGraph(Dictionary<string, Dictionary<string, int>> grafoOriginal)
         {
-            var grafoSimples = new Dictionary<string, List<string>>();
-
-            foreach (var cidade in grafoComPesos)
+            var novoGrafo = new Dictionary<string, Dictionary<string, int>>();
+            foreach (var origem in grafoOriginal)
             {
-                grafoSimples[cidade.Key] = new List<string>(cidade.Value.Keys);
+                novoGrafo[origem.Key] = new Dictionary<string, int>();
+                foreach (var destino in origem.Value)
+                {
+                    novoGrafo[origem.Key][destino.Key] = destino.Value;
+                }
             }
-
-            return grafoSimples;
+            return novoGrafo;
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {

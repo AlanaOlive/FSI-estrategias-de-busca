@@ -9,15 +9,15 @@ namespace FSI_estrategias_de_buscas
     internal class Algoritmos_de_busca
     {
         // 1. Busca em Largura (BFS)
-        public Dictionary<string, string> BuscaEmLargura(Dictionary<string, List<string>> grafo, string inicio, string objetivo)
+        public Dictionary<string, string> BuscaEmLargura(Dictionary<string, Dictionary<string, int>> grafo, string inicio, string objetivo)
         {
             var fila = new Queue<string>();
             var visitados = new HashSet<string>();
             var pais = new Dictionary<string, string>();
+            var custo = new Dictionary<string, int> { [inicio] = 0 };
             int numeroNos = 0;
 
             fila.Enqueue(inicio);
-            visitados.Add(inicio);
             pais[inicio] = null;
 
             while (fila.Count > 0)
@@ -27,46 +27,47 @@ namespace FSI_estrategias_de_buscas
 
                 if (atual == objetivo)
                 {
-                    // Reconstruir caminho
                     var caminho = new List<string>();
-                    string atualCaminho = objetivo;
-                    while (atualCaminho != null)
+                    string no = objetivo;
+                    while (no != null)
                     {
-                        caminho.Insert(0, atualCaminho);
-                        atualCaminho = pais[atualCaminho];
+                        caminho.Insert(0, no);
+                        no = pais[no];
                     }
 
-                    var result = new Dictionary<string, string>
+                    return new Dictionary<string, string>
                     {
                         ["caminho_percorrido"] = string.Join(" -> ", caminho),
-                        ["distancia"] = (caminho.Count - 1).ToString(),
+                        ["distancia"] = custo[objetivo].ToString(),
                         ["numero_nos"] = numeroNos.ToString()
                     };
-                    return result;
                 }
 
-                foreach (var vizinho in grafo[atual])
+                if (!visitados.Contains(atual))
                 {
-                    if (!visitados.Contains(vizinho))
+                    visitados.Add(atual);
+                    foreach (var vizinho in grafo[atual])
                     {
-                        fila.Enqueue(vizinho);
-                        visitados.Add(vizinho);
-                        pais[vizinho] = atual;
+                        if (!pais.ContainsKey(vizinho.Key))
+                        {
+                            fila.Enqueue(vizinho.Key);
+                            pais[vizinho.Key] = atual;
+                            custo[vizinho.Key] = custo[atual] + vizinho.Value;
+                        }
                     }
                 }
             }
 
-            Console.WriteLine("Objetivo não encontrado (BFS).");
             return null;
         }
 
-
         // 2. Busca em Profundidade (DFS)
-        public Dictionary<string, string> BuscaEmProfundidade(Dictionary<string, List<string>> grafo, string inicio, string objetivo)
+        public Dictionary<string, string> BuscaEmProfundidade(Dictionary<string, Dictionary<string, int>> grafo, string inicio, string objetivo)
         {
             var pilha = new Stack<string>();
             var visitados = new HashSet<string>();
             var pais = new Dictionary<string, string>();
+            var custo = new Dictionary<string, int> { [inicio] = 0 };
             int numeroNos = 0;
 
             pilha.Push(inicio);
@@ -75,6 +76,7 @@ namespace FSI_estrategias_de_buscas
             while (pilha.Count > 0)
             {
                 var atual = pilha.Pop();
+
                 if (!visitados.Contains(atual))
                 {
                     visitados.Add(atual);
@@ -83,28 +85,31 @@ namespace FSI_estrategias_de_buscas
                     if (atual == objetivo)
                     {
                         var caminho = new List<string>();
-                        var atualCaminho = objetivo;
-                        while (atualCaminho != null)
+                        string no = objetivo;
+                        while (no != null)
                         {
-                            caminho.Insert(0, atualCaminho);
-                            atualCaminho = pais[atualCaminho];
+                            caminho.Insert(0, no);
+                            no = pais[no];
                         }
 
                         return new Dictionary<string, string>
                         {
                             ["caminho_percorrido"] = string.Join(" -> ", caminho),
-                            ["distancia"] = (caminho.Count - 1).ToString(),
+                            ["distancia"] = custo[objetivo].ToString(),
                             ["numero_nos"] = numeroNos.ToString()
                         };
                     }
 
                     foreach (var vizinho in grafo[atual])
                     {
-                        if (!visitados.Contains(vizinho))
+                        if (!visitados.Contains(vizinho.Key))
                         {
-                            pilha.Push(vizinho);
-                            if (!pais.ContainsKey(vizinho))
-                                pais[vizinho] = atual;
+                            pilha.Push(vizinho.Key);
+                            if (!pais.ContainsKey(vizinho.Key))
+                            {
+                                pais[vizinho.Key] = atual;
+                                custo[vizinho.Key] = custo[atual] + vizinho.Value;
+                            }
                         }
                     }
                 }
@@ -166,12 +171,14 @@ namespace FSI_estrategias_de_buscas
             return null;
         }
 
+
         // 4. Busca Gulosa
         public Dictionary<string, string> BuscaGulosa(Dictionary<string, Dictionary<string, int>> grafo, Dictionary<string, int> heuristica, string inicio, string objetivo)
         {
             var fila = new PriorityQueue<string, int>();
             var visitados = new HashSet<string>();
             var pais = new Dictionary<string, string>();
+            var custo = new Dictionary<string, int> { [inicio] = 0 };
             int numeroNos = 0;
 
             fila.Enqueue(inicio, heuristica[inicio]);
@@ -180,6 +187,7 @@ namespace FSI_estrategias_de_buscas
             while (fila.Count > 0)
             {
                 var atual = fila.Dequeue();
+
                 if (visitados.Contains(atual)) continue;
 
                 visitados.Add(atual);
@@ -188,17 +196,17 @@ namespace FSI_estrategias_de_buscas
                 if (atual == objetivo)
                 {
                     var caminho = new List<string>();
-                    var atualCaminho = objetivo;
-                    while (atualCaminho != null)
+                    string no = objetivo;
+                    while (no != null)
                     {
-                        caminho.Insert(0, atualCaminho);
-                        atualCaminho = pais[atualCaminho];
+                        caminho.Insert(0, no);
+                        no = pais[no];
                     }
 
                     return new Dictionary<string, string>
                     {
                         ["caminho_percorrido"] = string.Join(" -> ", caminho),
-                        ["distancia"] = (caminho.Count - 1).ToString(),
+                        ["distancia"] = custo[objetivo].ToString(),
                         ["numero_nos"] = numeroNos.ToString()
                     };
                 }
@@ -207,6 +215,7 @@ namespace FSI_estrategias_de_buscas
                 {
                     if (!visitados.Contains(vizinho.Key))
                     {
+                        custo[vizinho.Key] = custo[atual] + vizinho.Value;
                         fila.Enqueue(vizinho.Key, heuristica[vizinho.Key]);
                         pais[vizinho.Key] = atual;
                     }
@@ -265,6 +274,7 @@ namespace FSI_estrategias_de_buscas
 
             return null;
         }
+
     }
 }
 
