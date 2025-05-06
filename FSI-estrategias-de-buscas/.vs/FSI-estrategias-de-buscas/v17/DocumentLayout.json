@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|c:\\all\\estudos\\pessoal\\fsi-estrategias-de-busca\\fsi-estrategias-de-buscas\\fsi-estrategias-de-buscas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|solutionrelative:fsi-estrategias-de-buscas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|c:\\all\\estudos\\pessoal\\fsi-estrategias-de-busca\\fsi-estrategias-de-buscas\\fsi-estrategias-de-buscas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|solutionrelative:fsi-estrategias-de-buscas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|c:\\all\\estudos\\pessoal\\fsi-estrategias-de-busca\\fsi-estrategias-de-buscas\\fsi-estrategias-de-buscas\\algoritmos_de_busca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|solutionrelative:fsi-estrategias-de-buscas\\algoritmos_de_busca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|c:\\all\\estudos\\pessoal\\fsi-estrategias-de-busca\\fsi-estrategias-de-buscas\\fsi-estrategias-de-buscas\\capitais.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D71FC42-A442-40EB-ACC3-1D88D0508096}|FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas.csproj|solutionrelative:fsi-estrategias-de-buscas\\capitais.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Form1.cs",
               "RelativeDocumentMoniker": "FSI-estrategias-de-buscas\\Form1.cs",
-              "ToolTip": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Form1.cs*",
-              "RelativeToolTip": "FSI-estrategias-de-buscas\\Form1.cs*",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAjwHEAAABOAAAAAAAAAA==",
+              "ToolTip": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Form1.cs",
+              "RelativeToolTip": "FSI-estrategias-de-buscas\\Form1.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAuwDMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T00:03:31.464Z",
+              "WhenOpened": "2025-05-06T00:21:28.852Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Form1.cs",
-              "RelativeDocumentMoniker": "FSI-estrategias-de-buscas\\Form1.cs",
-              "ToolTip": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Form1.cs [Projeto]*",
-              "RelativeToolTip": "FSI-estrategias-de-buscas\\Form1.cs [Projeto]*",
+              "DocumentIndex": 1,
+              "Title": "Capitais.cs",
+              "DocumentMoniker": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Capitais.cs",
+              "RelativeDocumentMoniker": "FSI-estrategias-de-buscas\\Capitais.cs",
+              "ToolTip": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Capitais.cs",
+              "RelativeToolTip": "FSI-estrategias-de-buscas\\Capitais.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T00:03:21.937Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Algoritmos_de_busca.cs",
-              "DocumentMoniker": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Algoritmos_de_busca.cs",
-              "RelativeDocumentMoniker": "FSI-estrategias-de-buscas\\Algoritmos_de_busca.cs",
-              "ToolTip": "C:\\All\\Estudos\\Pessoal\\FSI-estrategias-de-busca\\FSI-estrategias-de-buscas\\FSI-estrategias-de-buscas\\Algoritmos_de_busca.cs",
-              "RelativeToolTip": "FSI-estrategias-de-buscas\\Algoritmos_de_busca.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAIwC0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T00:02:47.552Z",
+              "WhenOpened": "2025-05-06T00:46:17.108Z",
               "EditorCaption": ""
             }
           ]

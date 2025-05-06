@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FSI_estrategias_de_buscas
 {
     public partial class Form1 : Form
     {
         private Algoritmos_de_busca algoritmos;
+        private Capitais Vcapitais;
 
-        private Dictionary<string, List<string>> grafoSimples;
-        private Dictionary<string, Dictionary<string, int>> grafoComPesos;
+        private Dictionary<string, Dictionary<string, int>> grafoComPesosT;
+        private Dictionary<string, Dictionary<string, int>> grafoComPesosA;
         private Dictionary<string, int> heuristicas;
 
         public Form1()
@@ -23,57 +24,55 @@ namespace FSI_estrategias_de_buscas
 
         private void InicializarGrafo()
         {
+            Vcapitais = new Capitais();
 
-            grafoSimples = new Dictionary<string, List<string>>
-            {
-                ["Brasilia"] = new List<string> { "Goiania", "Belo Horizonte" },
-                ["Goiania"] = new List<string> { "Brasilia", "Cuiaba" },
-                ["Belo Horizonte"] = new List<string> { "Brasilia", "Rio de Janeiro" },
-                ["Rio de Janeiro"] = new List<string> { "Belo Horizonte", "Sao Paulo" },
-                ["Sao Paulo"] = new List<string> { "Rio de Janeiro", "Curitiba" },
-                ["Cuiaba"] = new List<string> { "Goiania" },
-                ["Curitiba"] = new List<string> { "Sao Paulo" }
-            };
-
-            grafoComPesos = new Dictionary<string, Dictionary<string, int>>
-            {
-                ["Brasilia"] = new Dictionary<string, int> { ["Goiania"] = 209, ["Belo Horizonte"] = 740 },
-                ["Goiania"] = new Dictionary<string, int> { ["Brasilia"] = 209, ["Cuiaba"] = 934 },
-                ["Belo Horizonte"] = new Dictionary<string, int> { ["Brasilia"] = 740, ["Rio de Janeiro"] = 434 },
-                ["Rio de Janeiro"] = new Dictionary<string, int> { ["Belo Horizonte"] = 434, ["Sao Paulo"] = 429 },
-                ["Sao Paulo"] = new Dictionary<string, int> { ["Rio de Janeiro"] = 429, ["Curitiba"] = 408 },
-                ["Cuiaba"] = new Dictionary<string, int> { ["Goiania"] = 934 },
-                ["Curitiba"] = new Dictionary<string, int> { ["Sao Paulo"] = 408 }
-            };
-
-            heuristicas = new Dictionary<string, int>
-            {
-                ["Brasilia"] = 600,
-                ["Goiania"] = 500,
-                ["Cuiaba"] = 900,
-                ["Belo Horizonte"] = 400,
-                ["Rio de Janeiro"] = 200,
-                ["Sao Paulo"] = 100,
-                ["Curitiba"] = 0
-            };
+            grafoComPesosT = CompletarSimetricos(Vcapitais.DistanciasTerrestres);
+            grafoComPesosA = CompletarSimetricos(Vcapitais.DistanciasAereas);
         }
 
         private void InicializarComponentesForm()
         {
             cbAlgoritmo.Items.AddRange(new string[] {
-            "Busca em Largura", "Busca em Profundidade",
-            "Custo Uniforme", "Gulosa", "A*"
-        });
+                "Busca em Largura", "Busca em Profundidade",
+                "Custo Uniforme", "Gulosa", "A*"
+            });
 
-            cbOrigem.Items.AddRange(grafoSimples.Keys.ToArray());
-            cbDestino.Items.AddRange(grafoSimples.Keys.ToArray());
+            string[] capitais = grafoComPesosT.Keys.ToArray();
+
+            cbOrigem.Items.AddRange(capitais);
+            cbDestino.Items.AddRange(capitais);
+        }
+
+        private Dictionary<string, Dictionary<string, int>> CompletarSimetricos(Dictionary<string, Dictionary<string, int>> grafo)
+        {
+            var origens = grafo.Keys.ToList(); 
+
+            foreach (var origem in origens)
+            {
+                var destinos = grafo[origem].Keys.ToList();
+
+                foreach (var destino in destinos)
+                {
+                    if (!grafo.ContainsKey(destino))
+                        grafo[destino] = new Dictionary<string, int>();
+
+                    if (!grafo[destino].ContainsKey(origem))
+                        grafo[destino][origem] = grafo[origem][destino];
+                }
+            }
+
+            return grafo;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             txtResultadoCaminho.Text = "";
-            txtResultadoDist.Text += "";
-            txtResultadoNos.Text += "";
+            txtResultadoDist.Text = "";
+            txtResultadoNos.Text = "";
+
+            txtResultadoCaminhoA.Text = "";
+            txtResultadoDistA.Text = "";
+            txtResultadoNosA.Text = "";
 
             var algoritmo = cbAlgoritmo.SelectedItem?.ToString();
             var origem = cbOrigem.SelectedItem?.ToString();
@@ -85,45 +84,77 @@ namespace FSI_estrategias_de_buscas
                 return;
             }
 
+            heuristicas = new Dictionary<string, int>();
+            foreach (var cidade in grafoComPesosA.Keys)
+            {
+                if (grafoComPesosA[cidade].ContainsKey(destino))
+                    heuristicas[cidade] = grafoComPesosA[cidade][destino];
+                else
+                    heuristicas[cidade] = int.MaxValue;
+            }
+
             Dictionary<string, string> resultado = null;
+            Dictionary<string, string> resultadoAereo = null;
 
             switch (algoritmo)
             {
                 case "Busca em Largura":
-                    resultado = algoritmos.BuscaEmLargura(grafoSimples, origem, destino);
+                    resultado = algoritmos.BuscaEmLargura(ConvertToSimpleGraph(grafoComPesosT), origem, destino);
+                    resultadoAereo = algoritmos.BuscaEmLargura(ConvertToSimpleGraph(grafoComPesosA), origem, destino);
                     break;
+
                 case "Busca em Profundidade":
-                    resultado = algoritmos.BuscaEmProfundidade(grafoSimples, origem, destino);
+                    resultado = algoritmos.BuscaEmProfundidade(ConvertToSimpleGraph(grafoComPesosT), origem, destino);
+                    resultadoAereo = algoritmos.BuscaEmProfundidade(ConvertToSimpleGraph(grafoComPesosA), origem, destino);
                     break;
+
                 case "Custo Uniforme":
-                    resultado = algoritmos.BuscaCustoUniforme(grafoComPesos, origem, destino);
+                    resultado = algoritmos.BuscaCustoUniforme(grafoComPesosT, origem, destino);
+                    resultadoAereo = algoritmos.BuscaCustoUniforme(grafoComPesosA, origem, destino);
                     break;
+
                 case "Gulosa":
-                    resultado = algoritmos.BuscaGulosa(grafoComPesos, heuristicas, origem, destino);
+                    resultado = algoritmos.BuscaGulosa(grafoComPesosT, heuristicas, origem, destino);
+                    resultadoAereo = algoritmos.BuscaGulosa(grafoComPesosA, heuristicas, origem, destino);
                     break;
+
                 case "A*":
-                    resultado = algoritmos.BuscaAEstrela(grafoComPesos, heuristicas, origem, destino);
+                    resultado = algoritmos.BuscaAEstrela(grafoComPesosT, heuristicas, origem, destino);
+                    resultadoAereo = algoritmos.BuscaAEstrela(grafoComPesosA, heuristicas, origem, destino);
                     break;
             }
-            string res = "";
-
 
             if (resultado != null)
             {
                 txtResultadoCaminho.Text = $"Caminho: {resultado["caminho_percorrido"]}";
                 txtResultadoDist.Text = $"Distância: {resultado["distancia"]} Km";
                 txtResultadoNos.Text = $"Nós Visitados: {resultado["numero_nos"]}";
+
+                txtResultadoCaminhoA.Text = $"Caminho: {resultadoAereo["caminho_percorrido"]}";
+                txtResultadoDistA.Text = $"Distância: {resultadoAereo["distancia"]} Km";
+                txtResultadoNosA.Text = $"Nós Visitados: {resultadoAereo["numero_nos"]}";
             }
             else
             {
-                res = "Caminho não encontrado.";
-                txtResultadoCaminho.Text = res;
+                txtResultadoCaminho.Text = "Caminho não encontrado.";
+                txtResultadoCaminhoA.Text = "Caminho não encontrado.";
             }
+        }
+
+        private Dictionary<string, List<string>> ConvertToSimpleGraph(Dictionary<string, Dictionary<string, int>> grafoComPesos)
+        {
+            var grafoSimples = new Dictionary<string, List<string>>();
+
+            foreach (var cidade in grafoComPesos)
+            {
+                grafoSimples[cidade.Key] = new List<string>(cidade.Value.Keys);
+            }
+
+            return grafoSimples;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FSI-estrategias-de-buscas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9071d732ea211bc7e935216a8067f2d70588c58b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc6900707ae995477ae7303bf57c26800c7e3b3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("FSI-estrategias-de-buscas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FSI-estrategias-de-buscas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
