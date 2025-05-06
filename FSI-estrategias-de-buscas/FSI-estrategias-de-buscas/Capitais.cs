@@ -1107,7 +1107,7 @@ namespace FSI_estrategias_de_buscas
                     ["São Luis"] = 1162,
                     ["São Paulo"] = 2216,
                     ["Teresina"] = 905,
-                    ["Vitória"] = 1581
+                    ["Vitória"] = 1581,
                     ["São Paulo"] = 2216,
                     ["Teresina"] = 905,
                     ["Vitória"] = 1581
@@ -1155,7 +1155,7 @@ namespace FSI_estrategias_de_buscas
                     ["Fortaleza"] = 730,
                     ["Goiania"] = 1656,
                     ["João Pessoa"] = 299,
-                    ["Macapá"] = 2.009,
+                    ["Macapá"] = 2009,
                     ["Manaus"] = 2778,
                     ["Natal"] = 434,
                     ["Palmas"] = 1383,
